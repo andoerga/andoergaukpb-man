@@ -1,0 +1,1 @@
+open parentheses 23 close parentheses integral subscript blank x d y

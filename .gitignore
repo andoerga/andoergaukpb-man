@@ -1,1 +1,82 @@
+# =====================================================================
+# CodeIgniter 3 Core & Environment
+# =====================================================================
+/application/cache/*
+!/application/cache/index.html
+!/application/cache/.htaccess
 
+/application/logs/*
+!/application/logs/index.html
+!/application/logs/.htaccess
+
+/application/config/development/
+/application/config/testing/
+/application/config/production/
+
+# =====================================================================
+# User Uploads & Generated Documents
+# (assets/docs berisi arsip dokumen upload peserta berukuran besar)
+# =====================================================================
+/assets
+
+/uploads
+# =====================================================================
+# Backup & Temporary Files / Folders
+# =====================================================================
+*_
+*_.php
+**/_bak/
+*.bak
+*.backup
+*.old
+*~
+*.tmp
+*.log
+
+# =====================================================================
+# Composer & Dependencies
+# =====================================================================
+/vendor/
+composer.phar
+
+# =====================================================================
+# Node / Frontend Build (jika digunakan)
+# =====================================================================
+/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =====================================================================
+# Environment, Database Dumps & Sensitive Data
+# =====================================================================
+.env
+.env.*
+!.env.example
+*.sql
+*.sqlite
+
+# =====================================================================
+# IDEs & Code Editors
+# =====================================================================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.project
+.buildpath
+.settings/
+*.nbproject/
+
+# =====================================================================
+# Operating System Files
+# =====================================================================
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+.DS_Store
+.Spotlight-V100
+.Trashes
+
+*.tar

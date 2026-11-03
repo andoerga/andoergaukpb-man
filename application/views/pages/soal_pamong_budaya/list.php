@@ -1,0 +1,63 @@
+<!-- Main content -->
+<section class="content">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="box">
+				<div class="box-header row">
+					<div class="col-xs-6">
+						<h3 class="box-title">Daftar <?php echo $module_object->name; ?></h3>
+					</div>
+					<div class="col-xs-6 text-right">
+						<?php if($add_priv){ ?>
+						<a class="btn btn-sm btn-rounded btn-primary btn-rounded" data-toggle="tooltip" data-placement="left" title="Buat <?php echo $module_object->name; ?> " href="<?php echo site_url($module . '/add'); ?>" role="button"><i class="fa fa-plus"></i></a>
+						<?php } ?>
+					</div>
+				</div><!-- /.box-header -->
+				<div class="box-tool row">
+					<div class="col-xs-12">
+						<form id="change-category" href="<?php echo site_url($module . '/index/'); ?>">
+							<select name="category-id">
+								<?php foreach($mata_ujian as $m){ ?>
+								<option value="<?php echo $m->id; ?>" <?php echo $m->id == $category_id ? 'selected' : ''; ?>><?php echo $m->nama_ujian; ?></option>
+								<?php } ?>
+							</select>
+						</form>
+					</div>
+				</div>
+                <div class="box-body">
+					<table id="table-kegiatan" class="table table-bordered table-hover serverside" data-source-url="<?php echo site_url($module.'/ajax/'.$category_id); ?>" data-detail-url="<?php echo site_url($module.'/detail'); ?>" data-edit-url="<?php echo site_url($module.'/edit'); ?>" data-delete-url="<?php echo site_url($module.'/delete'); ?>" data-upload-url="<?php echo site_url($module.'/upload'); ?>" data-daftar-peserta-url="<?php echo site_url($module.'/daftar_peserta'); ?>">
+
+						<thead>
+							<tr>
+								<th class="title head" name="id">Id</th>
+								<th class="title head searchable" name="tipe_soal">Tipe Soal</th>
+								<th class="title head searchable" name="soal">Soal</th>
+							</tr>
+						</thead>
+						<?php /*
+						<tbody>
+							<?php if(count($data) > 0){ ?>
+							<?php foreach($data as $d){ ?>
+							<tr>
+								<td><?php echo $d->id; ?></td>
+								<td><?php echo $d->name; ?></td>
+								<td>
+									<?php if($delete_priv){ ?>
+									<a class="btn btn-primary" href="<?php echo site_url($module . '/delete/'.$d->id); ?>" role="button" title="Hapus Data"><i class="fa fa-trash"></i></a>
+									<?php } ?>
+									<?php if($edit_priv){ ?>
+									<a class="btn btn-primary" href="<?php echo site_url($module . '/edit/'.$d->id); ?>" role="button" title="Edit Data"><i class="fa fa-pencil"></i></a>
+									<?php } ?>
+									<a class="btn btn-primary" href="<?php echo site_url($module . '/detail/'.$d->id); ?>" role="button" title="Lihat Data"><i class="fa fa-file"></i></a>
+								</td>
+							</tr>
+							<?php } ?>
+							<?php } ?>
+						</tbody>
+						*/ ?>
+					</table>
+				</div><!-- /.box-body -->
+			</div><!-- /.box -->
+		</div>
+	</div>
+</section>

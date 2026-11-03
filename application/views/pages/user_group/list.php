@@ -1,0 +1,59 @@
+<!-- Main content -->
+<section class="content">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="box">
+				<div class="box-header row">
+					<div class="col-xs-6">
+						<h3 class="box-title">Daftar Kelompok Pengguna</h3>
+					</div>
+					<div class="col-xs-6 text-right">
+						<?php if($add_priv){ ?>
+						<a class="btn btn-sm btn-rounded btn-primary btn-rounded" href="<?php echo site_url('user_group/add'); ?>" role="button"><i class="fa fa-plus" title="Tambah Data"></i></a>
+						<?php } ?>
+					</div>
+				</div><!-- /.box-header -->
+				<div class="box-tool">
+				
+				</div>
+                <div class="box-body">
+					<table id="example2" class="table table-bordered table-hover">
+						<thead>
+							<tr>
+								<th class="title" name="id">Id</th>
+								<th class="title" name="name">Nama</th>
+								<td></td>
+							</tr>
+						</thead>
+						<tbody>
+							<?php if(count($data) > 0){ ?>
+							<?php foreach($data as $d){ ?>
+							<tr>
+								<td><?php echo $d->id; ?></td>
+								<td><?php echo $d->name; ?></td>
+								<td>
+									<?php if($delete_priv){ ?>
+									<a class="btn btn-primary" href="<?php echo site_url('user_group/delete/'.$d->id); ?>" role="button" title="Hapus Data"><i class="fa fa-trash"></i></a>
+									<?php } ?>
+									<?php if($edit_priv){ ?>
+									<a class="btn btn-primary" href="<?php echo site_url('user_group/edit/'.$d->id); ?>" role="button" title="Edit Data"><i class="fa fa-pencil"></i></a>
+									<?php } ?>
+									<a class="btn btn-primary" href="<?php echo site_url('user_group/detail/'.$d->id); ?>" role="button" title="Lihat Data"><i class="fa fa-file"></i></a>
+								</td>
+							</tr>
+							<?php } ?>
+							<?php } ?>
+						</tbody>
+						<tfoot>
+							<tr>
+								<th>Id</th>
+								<th>Nama</th>
+								<td></td>
+							</tr>
+						</tfoot>
+					</table>
+				</div><!-- /.box-body -->
+			</div><!-- /.box -->
+		</div>
+	</div>
+</section>
