@@ -17,3 +17,5 @@ backup/
 logs/
 
 docker-compose.yml
+Dockerfile
+Dockerfile.old

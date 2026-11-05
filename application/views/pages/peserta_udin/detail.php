@@ -100,7 +100,7 @@
 							<label for="inputName">TMT Golongan</label>
 						</div>
 						<div class="col-xs-12 col-sm-6 col-md-4">
-							<?php echo date('d F Y', strtotime($data->tmt_golongan)); ?>
+							<?php echo !empty($data->tmt_golongan) ? date('d F Y', strtotime($data->tmt_golongan)) : '-'; ?>
 						</div>
 					</div>
 					

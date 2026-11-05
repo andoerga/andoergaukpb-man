@@ -235,7 +235,6 @@ class Peserta_model extends CI_Model {
 	public function edit($id, $data) {
 		$this->db->where('id', $id);
 		$this->db->update($this->table_name, $data);
-		var_dump($data);
 		return $id;
 	}
 	
